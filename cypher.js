@@ -38,12 +38,12 @@ var spinRight = function() {
 
 var spinny = function() {
     var img = document.getElementById('outterring');
-    if (currentSpin > 26) {
+    if (currentSpin > 25) {
         currentSpin = 0;
     }
 
-    if (currentSpin < -1) {
-        currentSpin = 26;
+    if (currentSpin < 0) {
+        currentSpin = 25;
     }
 
     var degs = (currentSpin * (360/26));
