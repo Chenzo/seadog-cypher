@@ -1,0 +1,66 @@
+
+
+
+.wheelholder, .controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.outter {
+    /* height: 80vh;
+    position: relative;
+    z-index: 3; */
+    max-width: 600px;
+    width: 80%;
+    position: relative;
+    z-index: 3;
+}
+
+.outter img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+
+.inner {
+    width: 63%;
+    position: absolute;
+    z-index: 50;
+    max-width: 480px;
+}
+
+.inner img {
+    width: 100%;
+    height: 100%;
+}
+
+
+.controls {
+    margin-top: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+button {
+    padding: 10px;
+    margin: 0 10px;
+}
+
+.inputoutput {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 10;
+    position: relative;
+}
+
+.inputoutput input {
+    padding: 10px;
+    width: 300px;
+    text-align: center;
+}
