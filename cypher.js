@@ -52,20 +52,45 @@ var spinny = function() {
     parseThing();
 }
 
-var myInput = document.getElementById("code");
+var myInput = document.getElementById("input");
 var theOutput = document.getElementById("output");
+var doNotOmit = document.getElementById("donotomit");
+var replaceUnknown = document.getElementById("replaceunknown");
+var encodeMode = document.getElementById("encode");
 
 
 
 var parseThing = function() {
     var code = myInput.value;
     var codeArray = code.split("");
-
+    
+    var fromCode;
+    var toCode;
+    
+    if(encodeMode.checked == true) {
+        fromCode = innerCode;
+        toCode = outterCode;
+    }
+    else {
+        fromCode = outterCode;
+        toCode = innerCode;
+    }
+    
     var output = [];
     for (v=0; v<codeArray.length; v++) {
         var letter = codeArray[v];
-        var letterPosition = outterCode.findIndex((code) => code === letter);
-        output.push(innerCode[letterPosition]);
+        var letterPosition = fromCode.findIndex((code) => code === letter);
+        if(letterPosition == -1 && doNotOmit.checked == true) {
+            if (replaceUnknown.checked == true) {
+                output.push("?");
+            }
+            else {
+                output.push(letter);
+            }
+        }
+        else {
+            output.push(toCode[letterPosition]);
+        }
 
     }
 

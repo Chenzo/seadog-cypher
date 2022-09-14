@@ -26,12 +26,29 @@
         <button onClick="spinLeft()">Left</button><button onClick="spinRight()">Right</button>
 
     </div>
+	  
+    <div class="options">
+
+	<span>
+		<input type="checkbox" id="encode" name="encode" onClick="parseThing()">
+		<label for="encode">Encode (Grey to Gold)</label>
+	</span>
+	<span>
+		<input type="checkbox" id="donotomit" name="donotomit" onClick="parseThing()">
+		<label for="donotomit">Do not omit unknown chars</label>
+	</span>
+	<span>
+		<input type="checkbox" id="replaceunknown" name="replaceunknown" onClick="parseThing()">
+		<label for="replaceunknown">Replace unknown chars with "?"</label>
+	</span>
+
+    </div>
 
     <div class="inputoutput">
-        <label for="fname">Code:</label>
-        <input type="text" id="code" name="code">
-        <label for="fname">Solution:</label>
-        <input type="text" id="output" name="output">
+        <label for="fname">Input:</label>
+        <input type="text" id="input" name="input">
+        <label for="fname">Output:</label>
+        <input type="text" id="output" name="output" readonly>
     </div>
 
     
