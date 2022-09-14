@@ -52,7 +52,7 @@ var spinny = function() {
     parseThing();
 }
 
-var myInput = document.getElementById("code");
+var myInput = document.getElementById("input");
 var theOutput = document.getElementById("output");
 var doNotOmit = document.getElementById("donotomit");
 var replaceUnknown = document.getElementById("replaceunknown");
