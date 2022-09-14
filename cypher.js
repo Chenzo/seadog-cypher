@@ -67,7 +67,7 @@ var parseThing = function() {
     var fromCode;
     var toCode;
     
-    if(encodeMode === true) {
+    if(encodeMode == true) {
         fromCode = innerCode;
         toCode = outterCode;
     }
@@ -80,8 +80,8 @@ var parseThing = function() {
     for (v=0; v<codeArray.length; v++) {
         var letter = codeArray[v];
         var letterPosition = fromCode.findIndex((code) => code === letter);
-        if(letterPosition == -1 && doNotOmit === true) {
-            if (replaceUnknown === true) {
+        if(letterPosition == -1 && doNotOmit == true) {
+            if (replaceUnknown == true) {
                 output.push("?");
             }
             else {
