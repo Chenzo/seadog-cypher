@@ -55,7 +55,7 @@ var spinny = function() {
 var myInput = document.getElementById("code");
 var theOutput = document.getElementById("output");
 var doNotOmit = document.getElementById("donotomit");
-var preserveUnknown = document.getElementById("preserveunknown");
+var replaceUnknown = document.getElementById("replaceunknown");
 var encodeMode = document.getElementById("encode");
 
 
@@ -80,11 +80,13 @@ var parseThing = function() {
     for (v=0; v<codeArray.length; v++) {
         var letter = codeArray[v];
         var letterPosition = fromCode.findIndex((code) => code === letter);
-        if(letterPosition == -1 && doNotOmit) {
-            if (preserveUnknown) {
+        if(letterPosition == -1 && doNotOmit === true) {
+            if (replaceUnknown === true) {
+                output.push("?");
+            }
+            else {
                 output.push(letter);
             }
-            else {output.push("?")}
         }
         else {
             output.push(toCode[letterPosition]);
