@@ -54,18 +54,41 @@ var spinny = function() {
 
 var myInput = document.getElementById("code");
 var theOutput = document.getElementById("output");
+var doNotOmit = document.getElementById("donotomit");
+var preserveUnknown = document.getElementById("preserveunknown");
+var encodeMode = document.getElementById("encode");
 
 
 
 var parseThing = function() {
     var code = myInput.value;
     var codeArray = code.split("");
-
+    
+    var fromCode;
+    var toCode;
+    
+    if(encodeMode === true) {
+        fromCode = innerCode;
+        toCode = outterCode;
+    }
+    else {
+        fromCode = outterCode;
+        toCode = innerCode;
+    }
+    
     var output = [];
     for (v=0; v<codeArray.length; v++) {
         var letter = codeArray[v];
-        var letterPosition = outterCode.findIndex((code) => code === letter);
-        output.push(innerCode[letterPosition]);
+        var letterPosition = fromCode.findIndex((code) => code === letter);
+        if(letterPosition == -1 && doNotOmit) {
+            if (preserveUnknown) {
+                output.push(letter);
+            }
+            else {output.push("?")}
+        }
+        else {
+            output.push(toCode[letterPosition]);
+        }
 
     }
 
